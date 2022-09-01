@@ -7,6 +7,13 @@ on:
   pull_request:
 
 jobs:
+  setup:
+    name: Setup ffmpeg
+    runs-on: ubuntu-latest
+    steps:
+      - uses: FedericoCarboni/setup-ffmpeg@v1
+        id: setup-ffmpeg
+
   build:
     uses: adrn-blog/template/.github/workflows/post.yml@main
     with:
